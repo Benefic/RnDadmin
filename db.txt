@@ -1,6 +1,6 @@
 +++     rd_cities
         rd_contragent_ordertype
-        rd_contragents
++++     rd_contragents
         rd_cron
         rd_dev_statistics
         rd_devices
