@@ -5,5 +5,5 @@ import org.springframework.stereotype.Repository;
 import ru.runanddone.admin.offices.model.Office;
 
 @Repository
-public interface OfficeRepository extends JpaRepository<Office, Integer> {
+public interface OfficeRepository extends JpaRepository<Office, Byte> {
 }
