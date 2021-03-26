@@ -18,6 +18,20 @@ public class CityMapper {
         this.mapper = mapper;
     }
 
+/*    @PostConstruct
+    public void setupMapper(){
+        mapper.createTypeMap(City.class, CityDto.class)
+                .addMappings( m -> m.skip(CityDto::setOffice))
+                .setPostConverter(toDtoConverter());
+    }
+
+    public Converter<City, CityDto> toDtoConverter(){
+        return context -> {
+
+        }
+    }*/
+
+
     public City toEntity(CityDto dto) {
         return Objects.isNull(dto) ? null : mapper.map(dto, City.class);
     }

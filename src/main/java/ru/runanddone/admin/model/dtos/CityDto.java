@@ -10,4 +10,6 @@ public class CityDto {
 
     private String code;
     private String name;
+
+    private OfficeDto office;
 }
