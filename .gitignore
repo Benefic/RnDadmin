@@ -83,3 +83,4 @@ fabric.properties
 /build/
 /build/classes/java/main/
 /build/classes/java/test/
+/gradle/wrapper/
