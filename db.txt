@@ -28,7 +28,7 @@
         rd_orders
         rd_orderstatuses
         rd_ordertype_item
-        rd_ordertypes
++++     rd_ordertypes
         rd_push_queue
         rd_quotes
         rd_reasons
