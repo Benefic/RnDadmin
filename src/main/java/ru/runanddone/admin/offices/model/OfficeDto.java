@@ -1,4 +1,4 @@
-package ru.runanddone.admin.model.dtos;
+package ru.runanddone.admin.offices.model;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

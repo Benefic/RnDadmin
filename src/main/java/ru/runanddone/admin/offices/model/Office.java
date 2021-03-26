@@ -1,4 +1,4 @@
-package ru.runanddone.admin.model.entities;
+package ru.runanddone.admin.offices.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

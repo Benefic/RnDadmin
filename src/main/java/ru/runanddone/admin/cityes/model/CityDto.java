@@ -1,7 +1,8 @@
-package ru.runanddone.admin.model.dtos;
+package ru.runanddone.admin.cityes.model;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import ru.runanddone.admin.offices.model.OfficeDto;
 
 @Data
 @NoArgsConstructor

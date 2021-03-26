@@ -1,8 +1,9 @@
-package ru.runanddone.admin.model.entities;
+package ru.runanddone.admin.cityes.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import ru.runanddone.admin.offices.model.Office;
 
 import javax.persistence.*;
 

@@ -1,4 +1,4 @@
-package ru.runanddone.admin.controller;
+package ru.runanddone.admin.cityes.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import ru.runanddone.admin.model.dtos.CityDto;
-import ru.runanddone.admin.service.CityService;
+import ru.runanddone.admin.cityes.model.CityDto;
+import ru.runanddone.admin.cityes.service.CityService;
 
 import java.util.List;
 

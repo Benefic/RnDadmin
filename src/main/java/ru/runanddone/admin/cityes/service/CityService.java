@@ -1,13 +1,13 @@
-package ru.runanddone.admin.service;
+package ru.runanddone.admin.cityes.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
-import ru.runanddone.admin.model.dtos.CityDto;
-import ru.runanddone.admin.model.mappers.CityMapper;
-import ru.runanddone.admin.repository.CityRepository;
+import ru.runanddone.admin.cityes.model.CityDto;
+import ru.runanddone.admin.cityes.model.CityMapper;
+import ru.runanddone.admin.cityes.repository.CityRepository;
 
 @Service
 public class CityService {

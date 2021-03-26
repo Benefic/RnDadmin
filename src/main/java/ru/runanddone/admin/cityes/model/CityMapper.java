@@ -1,10 +1,8 @@
-package ru.runanddone.admin.model.mappers;
+package ru.runanddone.admin.cityes.model;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import ru.runanddone.admin.model.dtos.CityDto;
-import ru.runanddone.admin.model.entities.City;
 
 import java.util.Objects;
 
