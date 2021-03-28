@@ -2,7 +2,7 @@
         rd_contragent_ordertype
 +++     rd_contragents
         rd_cron
-        rd_dev_statistics
++++     rd_dev_statistics
 +++     rd_devices
 +++     rd_employees
 +++     rd_employeetypes
