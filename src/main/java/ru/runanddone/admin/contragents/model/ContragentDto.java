@@ -22,6 +22,6 @@ public class ContragentDto {
     private boolean isGroup;
     private CityDto city;
     private OfficeDto office;
-    private ContragentDto parrent;
+    private ContragentDto parent;
     private byte[] logotype;
 }

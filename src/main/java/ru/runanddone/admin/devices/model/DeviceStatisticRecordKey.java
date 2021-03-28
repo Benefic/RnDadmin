@@ -7,9 +7,9 @@ import javax.persistence.Embeddable;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
-@Embeddable
 @Data
 @NoArgsConstructor
+@Embeddable
 public class DeviceStatisticRecordKey implements Serializable {
     protected LocalDateTime time;
     protected String dev_id;
