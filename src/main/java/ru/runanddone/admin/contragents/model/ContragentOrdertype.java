@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 @Table(name = "rd_contragent_ordertype")
 public class ContragentOrdertype {
     @EmbeddedId
-    private ContragentOrdertypeKey contragentOrdertypeKey;
+    private ContragentOrdertypeKey key;
     private byte sort;
 
     @Column(name = "payment_percent")

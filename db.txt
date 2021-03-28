@@ -1,5 +1,5 @@
 +++     rd_cities
-        rd_contragent_ordertype
++++     rd_contragent_ordertype
 +++     rd_contragents
         rd_cron
 +++     rd_dev_statistics
@@ -11,7 +11,7 @@
         rd_ext_status_reason
         rd_files
         rd_filetypes
-        rd_items
++++     rd_items
         rd_mail_queue
         rd_messages
         rd_obj_delete
