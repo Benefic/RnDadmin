@@ -1,25 +1,20 @@
 package ru.runanddone.admin.devices.model;
 
+import lombok.AllArgsConstructor;
 import org.modelmapper.Converter;
 import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import ru.runanddone.admin.devices.repository.DeviceRepository;
 
 import javax.annotation.PostConstruct;
 import java.util.Objects;
 
+@AllArgsConstructor
 @Component
 public class DeviceStatisticMapper {
 
     private final ModelMapper mapper;
     private final DeviceRepository deviceRepository;
-
-    @Autowired
-    public DeviceStatisticMapper(ModelMapper mapper, DeviceRepository deviceRepository) {
-        this.mapper = mapper;
-        this.deviceRepository = deviceRepository;
-    }
 
     @PostConstruct
     public void setupMapper() {

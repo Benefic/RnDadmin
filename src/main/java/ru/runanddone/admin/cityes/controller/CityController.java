@@ -1,6 +1,6 @@
 package ru.runanddone.admin.cityes.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,16 +12,12 @@ import ru.runanddone.admin.cityes.service.CityService;
 
 import java.util.List;
 
+@AllArgsConstructor
 @RestController
 @RequestMapping("/api/v1/cities")
 public class CityController {
 
     private final CityService cityService;
-
-    @Autowired
-    public CityController(CityService cityService) {
-        this.cityService = cityService;
-    }
 
     @GetMapping
     public ResponseEntity<List<CityDto>> getAll(@RequestParam(defaultValue = "1") int page,

@@ -1,6 +1,6 @@
 package ru.runanddone.admin.cityes.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
@@ -9,17 +9,12 @@ import ru.runanddone.admin.cityes.model.CityDto;
 import ru.runanddone.admin.cityes.model.CityMapper;
 import ru.runanddone.admin.cityes.repository.CityRepository;
 
+@AllArgsConstructor
 @Service
 public class CityService {
     private final CityRepository cityRepository;
 
     private final CityMapper cityMapper;
-
-    @Autowired
-    public CityService(CityRepository cityRepository, CityMapper cityMapper) {
-        this.cityRepository = cityRepository;
-        this.cityMapper = cityMapper;
-    }
 
     public Page<CityDto> getAll(int page, int size) {
         return cityRepository.findAll(PageRequest.of(page, size, Sort.by("name"))).map(cityMapper::toDto);

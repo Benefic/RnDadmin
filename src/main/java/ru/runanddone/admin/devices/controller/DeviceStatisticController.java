@@ -1,6 +1,6 @@
 package ru.runanddone.admin.devices.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -12,15 +12,11 @@ import ru.runanddone.admin.devices.service.DeviceStatisticService;
 
 import java.util.List;
 
+@AllArgsConstructor
 @Controller
 @RequestMapping("/api/v1/devstats")
 public class DeviceStatisticController {
     private final DeviceStatisticService service;
-
-    @Autowired
-    public DeviceStatisticController(DeviceStatisticService service) {
-        this.service = service;
-    }
 
     @GetMapping
     public ResponseEntity<List<DeviceStatisticRecordDto>> getAll(@RequestParam(defaultValue = "1") int page,

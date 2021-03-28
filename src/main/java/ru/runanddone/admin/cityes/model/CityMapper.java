@@ -1,20 +1,16 @@
 package ru.runanddone.admin.cityes.model;
 
+import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.Objects;
 
+@AllArgsConstructor
 @Component
 public class CityMapper {
 
     private final ModelMapper mapper;
-
-    @Autowired
-    public CityMapper(ModelMapper mapper) {
-        this.mapper = mapper;
-    }
 
 /*    @PostConstruct
     public void setupMapper(){
