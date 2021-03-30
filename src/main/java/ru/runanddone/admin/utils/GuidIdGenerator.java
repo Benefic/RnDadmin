@@ -12,8 +12,7 @@ public class GuidIdGenerator {
             UUID uuid = UUID.randomUUID();
             int officeId = office.getId();
             String prefix = "000" + officeId;
-            String id = prefix.substring(prefix.length() - 3) + "-" + uuid.toString();
-            return id;
+            return prefix.substring(prefix.length() - 3) + "-" + uuid.toString();
         } else {
             return null;
         }

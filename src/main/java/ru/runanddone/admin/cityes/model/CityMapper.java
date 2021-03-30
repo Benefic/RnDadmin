@@ -1,9 +1,12 @@
 package ru.runanddone.admin.cityes.model;
 
 import lombok.AllArgsConstructor;
+import org.modelmapper.Converter;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
+import ru.runanddone.admin.offices.repository.OfficeRepository;
 
+import javax.annotation.PostConstruct;
 import java.util.Objects;
 
 @AllArgsConstructor
@@ -11,19 +14,37 @@ import java.util.Objects;
 public class CityMapper {
 
     private final ModelMapper mapper;
+    private final OfficeRepository officeRepository;
 
-/*    @PostConstruct
-    public void setupMapper(){
+    @PostConstruct
+    public void setupMapper() {
+
+        mapper.createTypeMap(CityDto.class, City.class)
+                .addMappings(m -> m.skip(City::setOffice))
+                .setPostConverter(toEntityConverter());
+
         mapper.createTypeMap(City.class, CityDto.class)
-                .addMappings( m -> m.skip(CityDto::setOffice))
+                .addMappings(m -> m.skip(CityDto::setOfficeId))
                 .setPostConverter(toDtoConverter());
     }
 
-    public Converter<City, CityDto> toDtoConverter(){
+    public Converter<City, CityDto> toDtoConverter() {
         return context -> {
+            City source = context.getSource();
+            CityDto destination = context.getDestination();
+            destination.setOfficeId(source.getOffice().getId());
+            return context.getDestination();
+        };
+    }
 
-        }
-    }*/
+    public Converter<CityDto, City> toEntityConverter() {
+        return context -> {
+            CityDto source = context.getSource();
+            City destination = context.getDestination();
+            destination.setOffice(officeRepository.findById(source.getOfficeId()).orElseThrow());
+            return context.getDestination();
+        };
+    }
 
 
     public City toEntity(CityDto dto) {
