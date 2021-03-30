@@ -20,8 +20,12 @@ public class CityService {
         return cityRepository.findAll(PageRequest.of(page, size, Sort.by("name"))).map(cityMapper::toDto);
     }
 
-    public boolean add(CityDto cityDto) {
-        return false;
+    public CityDto add(CityDto cityDto) {
+        try {
+            return cityMapper.toDto(cityRepository.save(cityMapper.toEntity(cityDto)));
+        } catch (Exception e) {
+            return null;
+        }
     }
 
 }

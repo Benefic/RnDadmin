@@ -3,10 +3,7 @@ package ru.runanddone.admin.cityes.controller;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import ru.runanddone.admin.cityes.model.CityDto;
 import ru.runanddone.admin.cityes.service.CityService;
 
@@ -29,5 +26,10 @@ public class CityController {
         }
 
         return new ResponseEntity<>(cityService.getAll(page, size).getContent(), HttpStatus.OK);
+    }
+
+    @PostMapping
+    public ResponseEntity<CityDto> add(@RequestBody CityDto city) {
+        return new ResponseEntity<>(cityService.add(city), HttpStatus.OK);
     }
 }
