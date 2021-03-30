@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import org.modelmapper.Converter;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
+import ru.runanddone.admin.common.ObjectNotFoundException;
 import ru.runanddone.admin.offices.repository.OfficeRepository;
 
 import javax.annotation.PostConstruct;
@@ -41,7 +42,8 @@ public class CityMapper {
         return context -> {
             CityDto source = context.getSource();
             City destination = context.getDestination();
-            destination.setOffice(officeRepository.findById(source.getOfficeId()).orElseThrow());
+            destination.setOffice(officeRepository.findById(source.getOfficeId())
+                    .orElseThrow(() -> new ObjectNotFoundException("Office with ID " + source.getOfficeId() + " not exist")));
             return context.getDestination();
         };
     }

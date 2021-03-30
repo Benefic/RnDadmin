@@ -21,11 +21,7 @@ public class CityService {
     }
 
     public CityDto add(CityDto cityDto) {
-        try {
-            return cityMapper.toDto(cityRepository.save(cityMapper.toEntity(cityDto)));
-        } catch (Exception e) {
-            return null;
-        }
+        return cityMapper.toDto(cityRepository.save(cityMapper.toEntity(cityDto)));
     }
 
 }
