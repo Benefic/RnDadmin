@@ -12,4 +12,5 @@ public class CityDto {
     private String name;
 
     private Byte officeId;
+    private String officeName;
 }

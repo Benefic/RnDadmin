@@ -5,6 +5,7 @@ import org.modelmapper.Converter;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 import ru.runanddone.admin.common.ObjectNotFoundException;
+import ru.runanddone.admin.offices.model.Office;
 import ru.runanddone.admin.offices.repository.OfficeRepository;
 
 import javax.annotation.PostConstruct;
@@ -26,6 +27,7 @@ public class CityMapper {
 
         mapper.createTypeMap(City.class, CityDto.class)
                 .addMappings(m -> m.skip(CityDto::setOfficeId))
+                .addMappings(m -> m.skip(CityDto::setOfficeName))
                 .setPostConverter(toDtoConverter());
     }
 
@@ -33,7 +35,9 @@ public class CityMapper {
         return context -> {
             City source = context.getSource();
             CityDto destination = context.getDestination();
-            destination.setOfficeId(source.getOffice().getId());
+            Office office = source.getOffice();
+            destination.setOfficeId(office.getId());
+            destination.setOfficeName(office.getName());
             return context.getDestination();
         };
     }
