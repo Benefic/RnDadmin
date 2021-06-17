@@ -23,4 +23,5 @@ public class DeviceDto {
 
     private OfficeDto office;
     private EmployeeDto employee;
+
 }
