@@ -25,7 +25,12 @@ public class CityController {
             page--;
         }
 
-        return new ResponseEntity<>(cityService.getAll(page, size).getContent(), HttpStatus.OK);
+        return new ResponseEntity<>(cityService.getAll(page, size), HttpStatus.OK);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<CityDto> getById(@PathVariable String id) {
+        return new ResponseEntity<>(cityService.getById(id), HttpStatus.OK);
     }
 
     @PostMapping
