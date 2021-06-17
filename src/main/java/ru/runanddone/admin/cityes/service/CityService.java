@@ -27,9 +27,12 @@ public class CityService {
     }
 
     public CityDto add(CityDto cityDto) {
-        cityDataMapper.save(cityDto);
-        return cityDto;
+        return cityDataMapper.save(cityDto);
         //return cityMapper.toDto(cityRepository.save(cityMapper.toEntity(cityDto)));
+    }
+
+    public boolean delete(String id) {
+        return cityDataMapper.delete(id);
     }
 
 }

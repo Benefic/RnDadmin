@@ -73,7 +73,7 @@ public class CityDataMapper implements DatabaseDataMapper<CityDto, String> {
     }
 
     @Override
-    public boolean save(CityDto object) {
+    public CityDto save(CityDto object) {
         Connection connection = new MySqlDatabaseConnector().connect();
         if (connection == null) {
             throw new RuntimeException("Couldn't connect to DB");
@@ -90,13 +90,25 @@ public class CityDataMapper implements DatabaseDataMapper<CityDto, String> {
             statement.setString(4, object.getName());
             statement.execute();
         } catch (SQLException ignored) {
-            return false;
+            return null;
         }
-        return true;
+        return object;
     }
 
     @Override
     public boolean delete(String id) {
-        return false;
+        Connection connection = new MySqlDatabaseConnector().connect();
+        if (connection == null) {
+            throw new RuntimeException("Couldn't connect to DB");
+        }
+        try {
+            PreparedStatement statement = connection.prepareStatement(
+                    "DELETE FROM rd_cities WHERE id = ?");
+            statement.setString(1, id);
+            statement.execute();
+        } catch (SQLException ignored) {
+            return false;
+        }
+        return true;
     }
 }

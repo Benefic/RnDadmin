@@ -7,7 +7,7 @@ public interface DatabaseDataMapper<T, I> {
 
     T getById(I id);
 
-    boolean save(T object);
+    T save(T object);
 
     boolean delete(I id);
 }

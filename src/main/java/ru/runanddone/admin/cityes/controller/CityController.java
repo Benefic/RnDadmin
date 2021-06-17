@@ -37,4 +37,11 @@ public class CityController {
     public ResponseEntity<CityDto> add(@RequestBody CityDto city) {
         return new ResponseEntity<>(cityService.add(city), HttpStatus.OK);
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Boolean> delete(@PathVariable String id) {
+        return new ResponseEntity<>(cityService.delete(id), HttpStatus.OK);
+    }
+
+
 }
