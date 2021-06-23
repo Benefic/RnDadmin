@@ -27,6 +27,6 @@ public class DeviceController {
             page--;
         }
 
-        return new ResponseEntity<>(service.getAll(page, size).getContent(), HttpStatus.OK);
+        return new ResponseEntity<>(service.getAll(page, size), HttpStatus.OK);
     }
 }

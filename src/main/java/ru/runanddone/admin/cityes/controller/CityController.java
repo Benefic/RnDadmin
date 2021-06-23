@@ -25,11 +25,23 @@ public class CityController {
             page--;
         }
 
-        return new ResponseEntity<>(cityService.getAll(page, size).getContent(), HttpStatus.OK);
+        return new ResponseEntity<>(cityService.getAll(page, size), HttpStatus.OK);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<CityDto> getById(@PathVariable String id) {
+        return new ResponseEntity<>(cityService.getById(id), HttpStatus.OK);
     }
 
     @PostMapping
     public ResponseEntity<CityDto> add(@RequestBody CityDto city) {
         return new ResponseEntity<>(cityService.add(city), HttpStatus.OK);
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Boolean> delete(@PathVariable String id) {
+        return new ResponseEntity<>(cityService.delete(id), HttpStatus.OK);
+    }
+
+
 }
