@@ -1,15 +1,17 @@
 package ru.runanddone.admin.cityes.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import org.hibernate.Hibernate;
 import org.hibernate.annotations.GenericGenerator;
 import ru.runanddone.admin.offices.model.Office;
 
 import javax.persistence.*;
+import java.util.Objects;
 
-@Data
-@NoArgsConstructor
+@Getter
+@Setter
+@ToString
+@RequiredArgsConstructor
 @AllArgsConstructor
 @Entity
 @Table(name = "rd_cities")
@@ -25,4 +27,18 @@ public class City {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "office_id")
     private Office office;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
+        City city = (City) o;
+
+        return Objects.equals(id, city.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return 39525063;
+    }
 }
