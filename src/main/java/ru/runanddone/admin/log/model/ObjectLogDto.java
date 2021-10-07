@@ -1,4 +1,4 @@
-package ru.runanddone.admin.log;
+package ru.runanddone.admin.log.model;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

@@ -1,4 +1,4 @@
-package ru.runanddone.admin.log;
+package ru.runanddone.admin.log.model;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -53,11 +53,11 @@ public class ObjectLog {
     private String tableName;
 
     @Lob
-    @Column(name = "data")
+    @Column(name = "data", columnDefinition = "text")
     private String data;
 
     @Lob
-    @Column(name = "request")
+    @Column(name = "request", columnDefinition = "text")
     private String request;
 
 }
