@@ -6,14 +6,14 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import ru.runanddone.admin.cityes.model.CityDto;
-import ru.runanddone.admin.cityes.model.CityMapper;
+import ru.runanddone.admin.cityes.model.CityModelMapper;
 import ru.runanddone.admin.cityes.repository.CityRepository;
 
 @AllArgsConstructor
 @Service
 public class CityService {
     private final CityRepository cityRepository;
-    private final CityMapper cityMapper;
+    private final CityModelMapper cityMapper;
 
 
     public Page<CityDto> getAll(int page, int size) {
