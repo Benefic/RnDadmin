@@ -20,7 +20,7 @@ import java.time.Instant;
 @Setter
 @RequiredArgsConstructor
 @ToString
-public class Objectlog {
+public class ObjectLog {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
